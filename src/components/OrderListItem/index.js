@@ -1,10 +1,13 @@
 import React from 'react'
 import { Image, Text, View } from 'react-native'
 import { Description, Name, RestaurantImage, Row } from '../../screens/OrdersScreen/styles'
+import { useNavigation } from '@react-navigation/native'
 
 const OrderListItem = ({order}) => {
+  const navigation = useNavigation()
+
   return (
-    <Row>
+    <Row onPress={() => navigation.navigate('Order', {id: order.id})}>
       <RestaurantImage source={{uri: order.Restaurant.image}}
       />
       <View>

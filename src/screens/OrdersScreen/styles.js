@@ -3,9 +3,8 @@ import styled from 'styled-components/native'
 export const Container = styled.View`
   flex: 1;
   width: 100%;
-  padding-top: 50px;
 `
-export const Row = styled.View`
+export const Row = styled.TouchableOpacity`
   flex-direction: row;
   margin: 10px;
 `

@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-export const Container = styled.View`
+export const Container = styled.TouchableOpacity`
   padding: 10px 0 10px 0;
   margin: 0 20px 0 20px;
   border-bottom-color: lightgrey;

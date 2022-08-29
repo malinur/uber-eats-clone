@@ -2,8 +2,13 @@ import React from 'react'
 import { StatusBar } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import RootNavigator from './src/navigation'
+import config from './src/aws-exports'
+import { Amplify } from 'aws-amplify'
+import { withAuthenticator } from 'aws-amplify-react-native'
 
-export default function App (props) {
+Amplify.configure({ ...config, Analytics: { disabled: true } })
+
+function App (props) {
   return (
     <NavigationContainer>
       <RootNavigator />
@@ -11,3 +16,5 @@ export default function App (props) {
     </NavigationContainer>
   )
 }
+
+export default withAuthenticator(App)
